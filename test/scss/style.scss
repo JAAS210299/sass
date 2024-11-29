@@ -1,0 +1,9 @@
+$primary-color: #00aaff;
+
+body {
+  color: $primary-color;
+  h1:hover {
+    font-size: 2em;
+    color: goldenrod;
+  }
+}

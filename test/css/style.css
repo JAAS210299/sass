@@ -1,0 +1,9 @@
+body {
+  color: #00aaff;
+}
+body h1:hover {
+  font-size: 2em;
+  color: goldenrod;
+}
+
+/*# sourceMappingURL=style.css.map */
