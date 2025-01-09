@@ -1,9 +1,149 @@
+@charset "UTF-8";
+/**
+ * Mixin para centrar un elemento con flexbox
+ * @param {String} $direction Dirección del eje (row, column)
+ */
+/**
+ * Mixin para agregar transiciones a las propiedades CSS
+ * @param {String} $property Propiedad a la que aplicar la transición
+ * @param {String} $duration Duración de la transición
+ * @param {String} $timing-function Función de tiempo (ease, linear, etc.)
+ */
+/**
+ * Mixin para aplicar sombra
+ * @param {String} $x Distancia en el eje X
+ * @param {String} $y Distancia en el eje Y
+ * @param {String} $blur Desenfoque
+ * @param {String} $color Color de la sombra
+ */
+/**
+ * Función para calcular el tamaño de una fuente en rem
+ * @param {Int} $pixels Tamaño en píxeles
+ * @return {String} El tamaño en rem
+ */
+/**
+ * Función para oscurecer un color
+ * @param {Color} $color Color que se va a oscurecer
+ * @param {Number} $percentage Porcentaje de oscuridad
+ * @return {Color} El color oscurecido
+ */
 body {
-  color: #00aaff;
+  font-family: "Helvetica Neue", sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body h1:hover {
-  font-size: 2em;
-  color: goldenrod;
+
+/**
+ * Estilos para encabezados
+ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  color: #3498db;
+  margin-bottom: 1rem;
+}
+
+/**
+ * Estilos para párrafos
+ */
+p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/**
+ * Estilos para enlaces
+ */
+a {
+  color: #3498db;
+  text-decoration: none;
+}
+a:hover {
+  color: #2ecc71;
+}
+
+/**
+ * Estilos para un botón
+ */
+.button {
+  padding: 1rem 2rem;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 0.875rem;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.button:hover {
+  background-color: rgb(33.1380753138, 125.1882845188, 186.8619246862);
+}
+.button--secondary {
+  background-color: #2ecc71;
+}
+.button--secondary:hover {
+  background-color: rgb(36.616, 162.384, 89.948);
+}
+
+/**
+ * Estilos para una tarjeta
+ */
+.card {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem;
+}
+.card .card__title {
+  font-size: 1.125rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.card .card__content {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/**
+ * Contenedor principal
+ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem;
+}
+
+/**
+ * Estilos para el encabezado de la página
+ */
+.header {
+  background-color: #3498db;
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/**
+ * Estilos para el pie de página
+ */
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,9 +1,186 @@
-$primary-color: #00aaff;
+// -----------------------------------------------------------
+// Variables
+// -----------------------------------------------------------
+
+// Colores
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$background-color: #f4f4f4;
+$text-color: #333;
+$border-radius: 5px;
+
+// Tipografía
+$font-stack: 'Helvetica Neue', sans-serif;
+$heading-font: 'Roboto', sans-serif;
+
+// Espaciado
+$spacing-unit: 1rem;
+$gutter-width: 1.5rem;
+
+// -----------------------------------------------------------
+// Mixins
+// -----------------------------------------------------------
+
+/// Mixin para centrar un elemento con flexbox
+/// @param {String} $direction Dirección del eje (row, column)
+@mixin flex-center($direction: row) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+/// Mixin para agregar transiciones a las propiedades CSS
+/// @param {String} $property Propiedad a la que aplicar la transición
+/// @param {String} $duration Duración de la transición
+/// @param {String} $timing-function Función de tiempo (ease, linear, etc.)
+@mixin transition($property, $duration: 0.3s, $timing-function: ease) {
+  transition: $property $duration $timing-function;
+}
+
+/// Mixin para aplicar sombra
+/// @param {String} $x Distancia en el eje X
+/// @param {String} $y Distancia en el eje Y
+/// @param {String} $blur Desenfoque
+/// @param {String} $color Color de la sombra
+@mixin box-shadow($x, $y, $blur, $color) {
+  box-shadow: $x $y $blur $color;
+}
+
+// -----------------------------------------------------------
+// Funciones
+// -----------------------------------------------------------
+
+/// Función para calcular el tamaño de una fuente en rem
+/// @param {Int} $pixels Tamaño en píxeles
+/// @return {String} El tamaño en rem
+@function px-to-rem($pixels) {
+  @return $pixels / 16 * 1rem;
+}
+
+/// Función para oscurecer un color
+/// @param {Color} $color Color que se va a oscurecer
+/// @param {Number} $percentage Porcentaje de oscuridad
+/// @return {Color} El color oscurecido
+@function darken-color($color, $percentage: 10%) {
+  @return darken($color, $percentage);
+}
+
+// -----------------------------------------------------------
+// Estilos Globales
+// -----------------------------------------------------------
 
 body {
+  font-family: $font-stack;
+  background-color: $background-color;
+  color: $text-color;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/// Estilos para encabezados
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font;
+  font-weight: bold;
   color: $primary-color;
-  h1:hover {
-    font-size: 2em;
-    color: goldenrod;
+  margin-bottom: $spacing-unit;
+}
+
+/// Estilos para párrafos
+p {
+  line-height: 1.6;
+  margin-bottom: $spacing-unit;
+}
+
+/// Estilos para enlaces
+a {
+  color: $primary-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $secondary-color;
   }
+}
+
+// -----------------------------------------------------------
+// Componentes
+// -----------------------------------------------------------
+
+/// Estilos para un botón
+.button {
+  padding: $spacing-unit $spacing-unit * 2;
+  background-color: $primary-color;
+  color: #fff;
+  border: none;
+  border-radius: $border-radius;
+  font-family: $font-stack;
+  font-size: px-to-rem(14);
+  cursor: pointer;
+  text-align: center;
+  @include transition(all);
+
+  &:hover {
+    background-color: darken-color($primary-color, 10%);
+  }
+
+  &--secondary {
+    background-color: $secondary-color;
+
+    &:hover {
+      background-color: darken-color($secondary-color, 10%);
+    }
+  }
+}
+
+/// Estilos para una tarjeta
+.card {
+  background-color: #fff;
+  padding: $spacing-unit * 2;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: $spacing-unit * 3;
+
+  .card__title {
+    font-size: px-to-rem(18);
+    font-weight: bold;
+    margin-bottom: $spacing-unit;
+  }
+
+  .card__content {
+    font-size: px-to-rem(14);
+    line-height: 1.5;
+  }
+}
+
+// -----------------------------------------------------------
+// Layout
+// -----------------------------------------------------------
+
+/// Contenedor principal
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $spacing-unit * 3;
+}
+
+/// Estilos para el encabezado de la página
+.header {
+  background-color: $primary-color;
+  color: #fff;
+  padding: $spacing-unit;
+  @include flex-center(row);
+
+  .logo {
+    font-size: px-to-rem(24);
+    font-weight: bold;
+  }
+}
+
+/// Estilos para el pie de página
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: $spacing-unit * 2;
 }

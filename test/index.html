@@ -1,23 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Document-pruebas</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto Sass</title>
+  <link rel="stylesheet" href="css/style.css"> <!-- Archivo CSS generado desde Sass -->
 </head>
-
 <body>
-    <div class="contenedor">
-        <div class="primer-bloque">
-            <p class="parrafo-inicial">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique ea ratione ipsam, autem voluptatibus, ab laudantium impedit quidem omnis incidunt tempora dolore excepturi. Corrupti neque excepturi nam distinctio, nulla voluptas.</p>
-        </div>
-        <div class="segundo-bloque">
-            <p class="parrafo-inicial">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi cupiditate doloremque tenetur, perspiciatis illum hic amet molestias natus rem quaerat consequuntur saepe neque, assumenda quis ex deleniti ipsa suscipit accusantium!</p>
-        </div>
-    </div>
-    <script src="./js/script.js"></script>
-</body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">Mi Proyecto Sass</div>
+  </header>
 
+  <!-- Contenedor Principal -->
+  <div class="container">
+    <h1>Bienvenido al Proyecto Sass</h1>
+    <p>Este es un proyecto de ejemplo para probar Sass, incluyendo variables, mixins, funciones, y más.</p>
+
+    <!-- Botón -->
+    <button class="button">Botón Primario</button>
+    <button class="button button--secondary">Botón Secundario</button>
+
+    <!-- Tarjetas -->
+    <div class="card">
+      <h2 class="card__title">Título de la Tarjeta 1</h2>
+      <p class="card__content">Este es un ejemplo de contenido para una tarjeta. Puedes agregar más información aquí.</p>
+    </div>
+
+    <div class="card">
+      <h2 class="card__title">Título de la Tarjeta 2</h2>
+      <p class="card__content">Aquí tienes otro ejemplo de tarjeta, con el mismo estilo pero diferente contenido.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Mi Proyecto Sass</p>
+  </footer>
+</body>
 </html>
