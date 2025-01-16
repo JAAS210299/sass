@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  sass:
+    image: node:18-bullseye
+    container_name: sass_compiler
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: sh -c "npm install -g sass && tail -f /dev/null"
